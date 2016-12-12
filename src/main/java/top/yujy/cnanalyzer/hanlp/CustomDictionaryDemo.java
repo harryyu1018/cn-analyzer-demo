@@ -10,6 +10,15 @@ import java.util.Map;
 
 /**
  * 用户词典Demo. 演示动态增删该查。
+ *
+ * {@link com.hankcs.hanlp.dictionary.CustomDictionary}是一份全局的用户自定义词典，可以随时增删，影响全部分词器。
+ * 另外，可以在分词器中关闭它。通过代码动态增删不会保存到词典文件。
+ *
+ * 追加词典：
+ * - CustomDictionary主词典路径是：data/dictionary/custom/CustomDictionary.txt，用户可以直接在此文件中追加词项（但是不推荐）；
+ * - 比较推荐的做法是，通过单独新建一个文本文件通过配置进行追加，如：data/dictionary/custom/CustomDictionary.txt; 我的词典.txt。
+ * 另外，官方建议把词性相同的词语放到同一个词典文件里，便于维护和分享。
+ *
  */
 public class CustomDictionaryDemo {
 
