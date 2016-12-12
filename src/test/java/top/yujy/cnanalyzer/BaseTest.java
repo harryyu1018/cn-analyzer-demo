@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BaseTest {
 
-    private static final String WHITESPACE = "  ";
+    private static final String WHITESPACE = "\t";
 
     public void print(List<String> list) {
 

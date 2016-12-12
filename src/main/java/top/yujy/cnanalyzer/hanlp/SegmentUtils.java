@@ -1,5 +1,6 @@
 package top.yujy.cnanalyzer.hanlp;
 
+import com.hankcs.hanlp.corpus.tag.Nature;
 import com.hankcs.hanlp.seg.CRF.CRFSegment;
 import com.hankcs.hanlp.seg.Dijkstra.DijkstraSegment;
 import com.hankcs.hanlp.seg.NShort.NShortSegment;
