@@ -44,6 +44,40 @@ public class RecognizeUtils {
     }
 
     /**
+     * 日本人名识别。默认关闭，需要手动开启。
+     * 原因：出现频次较低，但是又消耗性能。
+     * @param text
+     * @return
+     */
+    public static List<String> japaneseName(String text) {
+
+        List<String> words = new ArrayList<>();
+        HanLP.newSegment()
+                .enableJapaneseNameRecognize(true)
+                .seg(text)
+                .forEach(t -> { words.add(t.word); });
+
+        return words;
+    }
+
+    /**
+     * 地名识别。默认关闭，需要手动开启。
+     * 原因：消耗性能，并且多数地名都收录在核心词典和用户自定义词典中。
+     * @param text
+     * @return
+     */
+    public static List<String> place(String text) {
+
+        List<String> words = new ArrayList<>();
+        HanLP.newSegment()
+                .enablePlaceRecognize(true)
+                .seg(text)
+                .forEach(t -> { words.add(t.word); });
+
+        return words;
+    }
+
+    /**
      * 机构名识别。 默认关闭，需要用户手动开启。
      * @param text
      * @return

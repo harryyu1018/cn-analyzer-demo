@@ -39,6 +39,32 @@ public class RecognizeUtilsTest extends BaseTest {
     }
 
     @Test
+    public void japaneseName() {
+
+        String[] testCase = new String[]{
+                "北川景子参演了林诣彬导演的《速度与激情3》",
+                "林志玲亮相网友:确定不是波多野结衣？",
+        };
+
+        for (String text : testCase) {
+            print(RecognizeUtils.japaneseName(text));
+        }
+    }
+
+    @Test
+    public void place() {
+
+        String[] testCase = new String[]{
+                "武胜县新学乡政府大楼门前锣鼓喧天",
+                "蓝翔给宁夏固原市彭阳县红河镇黑牛沟村捐赠了挖掘机",
+        };
+
+        for (String text : testCase) {
+            print(RecognizeUtils.place(text));
+        }
+    }
+
+    @Test
     public void organization() {
 
         String[] testCase = new String[]{
